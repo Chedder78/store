@@ -189,3 +189,33 @@ document.addEventListener('DOMContentLoaded', () => {
         cartModal.style.display = 'none';
     });
 });
+const slider = document.querySelector('.product-grid');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+
+let currentScroll = 0;
+const cardWidth = 220; // Width of product card + gap
+
+// Scroll Right
+rightArrow.addEventListener('click', () => {
+    currentScroll -= cardWidth;
+    slider.style.transform = `translateX(${currentScroll}px)`;
+    updateButtons();
+});
+
+// Scroll Left
+leftArrow.addEventListener('click', () => {
+    currentScroll += cardWidth;
+    slider.style.transform = `translateX(${currentScroll}px)`;
+    updateButtons();
+});
+
+// Enable/Disable Arrows
+function updateButtons() {
+    const maxScroll = -(slider.scrollWidth - slider.clientWidth);
+    rightArrow.disabled = currentScroll <= maxScroll;
+    leftArrow.disabled = currentScroll >= 0;
+}
+
+// Initialize Buttons
+updateButtons();
