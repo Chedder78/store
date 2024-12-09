@@ -1,0 +1,125 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(180deg, #2c3e50, #34495e);
+  color: #ecf0f1;
+  overflow-x: hidden;
+}
+
+/* Parallax Background */
+.parallax {
+  background: url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  filter: blur(3px) brightness(80%);
+  position: relative;
+  z-index: 1;
+}
+
+/* Content Section */
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+/* Header Section */
+header {
+  text-align: center;
+  padding: 30px 10px;
+  background: rgba(44, 62, 80, 0.9);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ff6b6b;
+}
+
+header p {
+  font-size: 1rem;
+  color: #bdc3c7;
+}
+
+/* Form Section */
+.checkout-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #ffd36b;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ecf0f1;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Cart Summary */
+.cart-summary {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: #bdc3c7;
+}
+
+.cart-summary p {
+  margin: 5px 0;
+}
+
+.cart-summary strong {
+  font-size: 1.2rem;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  background: linear-gradient(45deg, #ff6b6b, #ffd36b);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.6);
+}
+
+/* Footer Section */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #2c3e50;
+  margin-top: 20px;
+  color: #bdc3c7;
+}
