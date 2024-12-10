@@ -100,7 +100,7 @@ body {
 
 /* Parallax Section */
 .parallax {
-    height: 300px;
+    height: 600px;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -392,14 +392,6 @@ button:focus:after {
 
 .cart-btn:hover {
     background: linear-gradient(90deg, #003f8a, #009edc);
-}
-/* Global Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #333;
 }
 
 /* Section Titles */
