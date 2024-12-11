@@ -219,3 +219,82 @@ function updateButtons() {
 
 // Initialize Buttons
 updateButtons();
+
+async function loginUser(email, password) {
+    const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    });
+    const data = await response.json();
+    if (response.ok) {
+        console.log('Login successful:', data.message);
+        // Save session details if needed
+    } else {
+        console.error('Login failed:', data.message);
+    }
+}
+
+async function fetchProducts() {
+    const response = await fetch('http://localhost:5000/products');
+    const products = await response.json();
+    const productContainer = document.querySelector('.product-grid');
+    productContainer.innerHTML = ''; // Clear existing products
+
+    products.forEach(product => {
+        const productCard = `
+            <div class="product-card glass">
+                <img src="${product.image_url}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>$${product.price.toFixed(2)}</p>
+                <button onclick="addToCart(${product.id})">Add to Cart</button>
+            </div>`;
+        productContainer.innerHTML += productCard;
+    });
+}
+
+async function addToCart(productId) {
+    const response = await fetch('http://localhost:5000/cart', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ product_id: productId, quantity: 1 })
+    });
+    const data = await response.json();
+    if (response.ok) {
+        console.log(data.message);
+    } else {
+        console.error('Error adding to cart:', data.message);
+    }
+}
+
+async function viewCart() {
+    const response = await fetch('http://localhost:5000/cart');
+    const cartItems = await response.json();
+    const cartContainer = document.querySelector('.cart-container');
+    cartContainer.innerHTML = '';
+
+    cartItems.forEach(item => {
+        const cartItem = `
+            <div class="cart-item">
+                <span>Product ID: ${item.product_id}</span>
+                <span>Quantity: ${item.quantity}</span>
+                <button onclick="removeFromCart(${item.id})">Remove</button>
+            </div>`;
+        cartContainer.innerHTML += cartItem;
+    });
+}
+
+async function checkout(totalAmount) {
+    const response = await fetch('http://localhost:5000/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ total_amount: totalAmount })
+    });
+    const data = await response.json();
+    if (response.ok) {
+        console.log('Redirecting to PayPal:', data.redirect_url);
+        window.location.href = data.redirect_url; // Redirect to PayPal
+    } else {
+        console.error('Checkout failed:', data.message);
+    }
+}
