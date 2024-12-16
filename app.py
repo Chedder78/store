@@ -3,16 +3,18 @@ import paypalrestsdk
 
 app = Flask(__name__)
 
-# Configure PayPal
+# Configure PayPal SDK
 paypalrestsdk.configure({
-    "mode": "sandbox",  # Use "live" for production
-    "client_id": "YOUR_CLIENT_ID",
-    "client_secret": "YOUR_CLIENT_SECRET"
+    "mode": "sandbox",  # Change to "live" for production
+    "client_id": "AcEIXRvF3NxGBY0PmDonJXfXI-GwovndxtAanVhVNHw1ZxtJGMGrINvxe0aejuypEzhF_NXgt7rDbdgG",
+    "client_secret": "EAL2RrpGRkg-ovCOw5LZeESngjAVWYRVDUttGYYuDalpIAP0ieMij_xpQYyi8FWX8zS3pooemwjJ-mvP"
 })
+
 
 @app.route("/")
 def home():
     return "Welcome to the PayPal Checkout Backend!"
+
 
 @app.route("/create_payment", methods=["POST"])
 def create_payment():
@@ -41,22 +43,36 @@ def create_payment():
     })
 
     if payment.create():
+        # Extract approval URL for the buyer to approve the payment
         for link in payment.links:
             if link.rel == "approval_url":
-                return jsonify({"approval_url": link.href, "payment_id": payment.id})
+                return jsonify({
+                    "approval_url": link.href,
+                    "payment_id": payment.id
+                })
     else:
-        return jsonify({"error": payment.error}), 400
+        # Log errors for debugging
+        print(payment.error)
+        return jsonify({"error": payment.error}), 500
 
-@app.route("/execute_payment", methods=["POST"])
-def execute_payment():
-    payment_id = request.json.get("payment_id")
-    payer_id = request.json.get("payer_id")
+
+@app.route("/payment_success", methods=["GET"])
+def payment_success():
+    payment_id = request.args.get("paymentId")
+    payer_id = request.args.get("PayerID")
 
     payment = paypalrestsdk.Payment.find(payment_id)
     if payment.execute({"payer_id": payer_id}):
-        return jsonify({"message": "Payment executed successfully!", "payment": payment.to_dict()})
+        return "Payment executed successfully!"
     else:
-        return jsonify({"error": payment.error}), 400
+        print(payment.error)
+        return "Payment execution failed."
 
-if __name__ == "__main__":
+
+@app.route("/payment_cancel", methods=["GET"])
+def payment_cancel():
+    return "Payment cancelled by user."
+
+
+if __name__ == '__main__':
     app.run(debug=True)
