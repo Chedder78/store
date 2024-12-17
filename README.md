@@ -8,13 +8,14 @@ Welcome to **CaliDef Collectables**, your one-stop shop for premium collectible 
 - **User-Friendly Interface**: Intuitive design for a smooth shopping experience.
 - **Responsive Design**: Optimized for both desktop and mobile devices.
 - **Search and Filter**: Quickly find what you’re looking for with advanced search and filter options.
+- **Parallax Scrolling Effects**: Enjoy an immersive browsing experience with dynamic background images.
 
 ## Technologies Used
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB (for product and user management)
-- **Styling**: Bootstrap and custom CSS (`cart.css`)
-- **Static Files**: Organized in the `static` folder
+- **Frontend**: HTML5, CSS3 (with Flexbox and Grid for layout)
+- **Styling**: Custom CSS with CSS Variables for theming, Bootstrap not used
+- **Animations**: Custom CSS animations and hover effects
+- **Parallax**: Background image effects for an enhanced user experience
+- **JavaScript**: Interaction handling for features like product scrolling and pre-order form
 - **Version Control**: Git and GitHub for collaboration
 
 ## How to Install and Run
@@ -30,23 +31,25 @@ git clone https://github.com/your-username/CaliDef-Collectables.git
 cd CaliDef-Collectables
 ```
 
-### Install Dependencies:
-Run the command:
+### Run the Website:
+Simply open `index.html` in a web browser.
+
+For local hosting, use any HTTP server, such as Python’s built-in server:
 ```bash
-npm install
+python3 -m http.server
 ```
 
-### Run the Application:
-Start the server using:
-```bash
-npm start
+Then, open your browser and navigate to:
+```
+http://localhost:8000
 ```
 
-### Access the Website:
-Open your browser and navigate to:
-```
-http://localhost:3000
-```
+## Deployment
+The website is live at [CaliDef Collectables](https://chedder78.github.io/store).
+
+To deploy your updates:
+1. Push your changes to the `gh-pages` branch.
+2. GitHub Pages will automatically update the live site.
 
 ## Contributing
 We welcome contributions! To contribute:
@@ -72,9 +75,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 For questions or support, you can reach us at:
 
-- **Email**: support@calidefcollectables.com
-- **Website**: [CaliDef Collectables](https://calidefcollectables.com)
-
----
-
-This version is optimized for readability in markdown format.
+- **Email**: Calidefinition@gmail.com
+- **Website**: [CaliDef Collectables](https://chedder78.github.io/store)
