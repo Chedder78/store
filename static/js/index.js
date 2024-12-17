@@ -145,10 +145,13 @@ document.addEventListener('DOMContentLoaded', () => {
         cart.forEach((item, index) => {
             const li = document.createElement('li');
             li.classList.add('cart-item');
-            li.innerHTML = `
-                ${item.name} - $${item.price.toFixed(2)}
-                <button class="remove-item" data-index="${index}">Remove</button>
-            `;
+            const textNode = document.createTextNode(`${item.name} - $${item.price.toFixed(2)}`);
+            li.appendChild(textNode);
+            const removeButton = document.createElement('button');
+            removeButton.classList.add('remove-item');
+            removeButton.setAttribute('data-index', index);
+            removeButton.textContent = 'Remove';
+            li.appendChild(removeButton);
             cartItemsElement.appendChild(li);
             total += item.price;
         });
