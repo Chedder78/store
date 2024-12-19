@@ -147,4 +147,8 @@ def checkout():
 
 if __name__ == '__main__':
     db.create_all()
-    app.run(debug=True)
+    import os
+
+# Enable debug mode only if the FLASK_ENV environment variable is set to "development"
+app.run(debug=os.getenv("FLASK_ENV") == "development")
+
