@@ -3,6 +3,7 @@ import paypalrestsdk
 
 app = Flask(__name__)
 
+
 # Configure PayPal SDK
 paypalrestsdk.configure({
     "mode": "sandbox",  # Change to "live" for production
@@ -76,6 +77,9 @@ def payment_cancel():
 
 if __name__ == '__main__':
     import os
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5001)
 
 # Enable debug mode only if the FLASK_ENV environment variable is set to "development"
 app.run(debug=os.getenv("FLASK_ENV") == "development")
