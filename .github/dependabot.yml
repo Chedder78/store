@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "pytest" # Ignore updates to test-related packages
+      - dependency-name: "black"  # Ignore updates to code formatting tools
+    allow:
+      - dependency-type: "production" # Focus only on production dependencies
