@@ -15,7 +15,7 @@ asgiref==3.5.2
 asn1crypto==1.5.1
 astor==0.8.1
 astropy==5.3.3
-asttokens==2.0.5
+asttokens==3.0.0
 astunparse==1.6.3
 async==0.6.2
 async-generator==1.10
