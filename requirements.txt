@@ -32,7 +32,7 @@ bcrypt==3.2.2
 Beaker==1.13.0
 beautifulsoup4==4.11.1
 biopython==1.79
-black==22.3.0
+black==24.3.0
 bleach==5.0.1
 blinker==1.4
 bokeh==2.4.3
