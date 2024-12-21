@@ -81,7 +81,7 @@ images.jpg   # Images and assets used in the site
    ```
 
 ## Deployment
-This website is live at [CaliDef Collectables](https://chedder78.github.io/store).
+This website is live at CaliDef Collectables (https://chedder78.github.io/store).
 
 To deploy updates:
 1. Push changes to the `gh-pages` branch:
@@ -113,5 +113,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 For questions, suggestions, or support:
-- **Email**: support@calidefcollectables.com
-- **Website**: [CaliDef Collectables](https://chedder78.github.io/store)
+- **Email**: **********tion@gmail.com
+- **Website**: CaliDef Collectables (https://chedder78.github.io/store)
