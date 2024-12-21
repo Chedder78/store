@@ -1,7 +1,3 @@
-Thank you for clarifying. Below is the updated **README file** tailored to your actual project, referencing the provided `index.html` structure and organization.
-
----
-
 # CaliDef Collectables
 
 Welcome to **CaliDef Collectables**, your gateway to premium Garbage Pail Kids cards, custom collectibles, and unique merchandise. This repository contains the source code for the CaliDef Collectables website.
@@ -19,13 +15,15 @@ Welcome to **CaliDef Collectables**, your gateway to premium Garbage Pail Kids c
 The project is organized as follows:
 ```
 .
-├── index.html        # Main HTML file
-├── static/
-│   ├── css/
-│   │   └── index.css # Main CSS file for styling
-│   ├── js/
-│   │   └── index.js  # JavaScript for interactive features
-│   └── images/       # Images and assets used in the site
+index.html # Main HTML file
+
+│   
+index.css # Main CSS file for styling
+│   ├──
+index.js  # Main JavaScript for
+interactive features
+|
+images.jpg   # Images and assets used in the site
 ```
 
 ### Key Sections in `index.html`:
@@ -52,23 +50,23 @@ The project is organized as follows:
   - Custom styles with gradients, animations, and hover effects.
   - Responsive design with Flexbox and Grid.
 - **JavaScript**: Handles interactivity (e.g., cart functionality and scrolling).
-- **Images**: Hosted locally in the `static/images` folder for optimal performance.
+- **Images**: Hosted locally in the `images` folder for optimal performance.
 - **Version Control**: Git and GitHub for collaboration and deployment.
 
 ## How to Use
 
 ### Prerequisites
-1. A web browser (Chrome, Firefox, Safari, etc.).
-2. A code editor (e.g., Visual Studio Code) for modifications.
+1. A web browser (Chrome, Firefox, Safari, Brave etc.).
+2. A code editor (e.g., Visual Studio Code, github, Python Anywhere, termux ) for modifications.
 
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/chedder78/CaliDef-Collectables.git
+   git clone https://github.com/Chedder78/store.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd CaliDef-Collectables
+   cd Chedder78/store/
    ```
 
 ### Running Locally
