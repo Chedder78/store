@@ -14,6 +14,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    fetch('https://Chedder78.pythonanywhere.com/create-payment', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ total: '20.00', description: 'Order #123' })
+})
+.then(response => response.json())
+.then(data => {
+    if (data.approval_url) {
+        window.location.href = data.approval_url; // Redirect to PayPal for payment
+    } else {
+        console.error('Error:', data);
+    }
+});
+const queryParams = new URLSearchParams(window.location.search);
+const paymentId = queryParams.get('paymentId');
+const payerId = queryParams.get('PayerID');
+
+fetch('https://Chedder78.pythonanywhere.com/execute-payment', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ paymentId, PayerID: payerId })
+})
+.then(response => response.json())
+.then(data => {
+    console.log('Payment Success:', data);
+})
+.catch(error => {
+    console.error('Payment Error:', error);
+});
+
+
     // Scrolling Feature with Scrollbar
     const scrollingSections = document.querySelectorAll('.scrolling-container');
     scrollingSections.forEach(container => {
