@@ -609,7 +609,7 @@ zope.site==4.5.0
 zope.size==4.3
 zope.tal==4.5
 zope.tales==5.1
-zope.testbrowser==5.6.1
+zope.testbrowser==7.0
 zope.testing==4.10
 zope.traversing==4.4.1
 zope.viewlet==4.3
