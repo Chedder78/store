@@ -3,7 +3,9 @@
     <title>Fastlane - PayPal Integration - Quick Start</title>
 
     <head>
-        <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/checkout.css') }}">
+
+
     </head>
 
     <body>
@@ -46,7 +48,7 @@
 
             <hr />
 
-            
+
             <section id="shipping">
                 <div class="header">
                     <h2>Shipping</h2>
@@ -131,7 +133,7 @@
                     Continue
                 </button>
             </section>
-            
+
             <hr />
 
             <section id="payment">
@@ -155,14 +157,19 @@
             </button>
         </form>
 
-        
+
         <script
             src="https://www.paypal.com/sdk/js?client-id=AYOeyCQvilLVKJGjslZfFSi_Nkl7A6OfXNarj5lS55iUcQXMhpp3AypVjAVkS_qvPcO5D415b9SnBFuN&components=buttons%2Cfastlane"
             data-sdk-client-token="eyJraWQiOiJkMTA2ZTUwNjkzOWYxMWVlYjlkMTAyNDJhYzEyMDAwMiIsInR5cCI6IkpXVCIsImFsZyI6IkVTMjU2In0.eyJpc3MiOiJodHRwczovL2FwaS5zYW5kYm94LnBheXBhbC5jb20iLCJhdWQiOlsiaHR0cHM6Ly9hcGkuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJwYXlwYWwuY29tIl0sInN1YiI6IjJUSFY2R0VSVFZRRUUiLCJhY3IiOlsiY2xpZW50Il0sInNjb3BlIjpbIkJyYWludHJlZTpWYXVsdCJdLCJvcHRpb25zIjp7fSwiYXoiOiJjY2cxOC5zbGMiLCJleHRlcm5hbF9pZCI6WyJQYXlQYWw6MlRIVjZHRVJUVlFFRSIsIkJyYWludHJlZTozMms4amNqNnJ5MnF2YmZ0Il0sImV4cCI6MTczMzg3NDU1OCwiaWF0IjoxNzMzODczNjU4LCJqdGkiOiJVMkFBTHhxeTJEazJycVhPamNUQ1B3OGRDdm44RGRIUkRDalNSMDFUbGdIUUpoeXZWNlJpVHJHRnNVNk5Nd085bHZMZjZKMkZDQzJONW5BYmhBNjVGM0ZORXkwaHlDZVkzcUhwcndsNjN5SXdHdlpFbml6RUhpeGRoRTl4VXAzUSJ9.BGNwUjaQp2cW6Pavv8Vg_XOG6kILOpVExIIokdlSsy6Y4aOX-_cHI-GyxK0PdkRlkConkzOjvFaedsTMfjx88A"
             data-sdk-integration-source="developer-studio"
             defer
         ></script>
-        
-        <script src="checkout.js"></script>
+
+       <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+
     </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 554337884b9ce4f7c6ec565465c5b8424c0af6ec
