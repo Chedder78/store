@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CaliDef Collectables</title>
-    <link rel="stylesheet" href="index.css">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -261,6 +262,8 @@
     </div>
     <p class="footer-note">&copy; 2024 CaliDef Collectables. All Rights Reserved.</p>
 </footer>
-<script src="index.js"></script>
+
+<script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+
 </body>
 </html>
