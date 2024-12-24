@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | CaliDef Collectables</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">CaliDef</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="#categories">Shop</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart">
+        <h2 class="section-title">Your Cart</h2>
+        <div class="cart-container">
+            <!-- Cart Items -->
+            <div id="cart-items" class="cart-items">
+                <!-- Example of a cart item -->
+                <!-- Items will be dynamically added here via JavaScript -->
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <p id="cart-total">Total: $0.00</p>
+                <button id="checkout-button" class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Fetch cart data from localStorage or a backend API
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('cart-total');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function renderCart() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+
+                    const cartItem = `
+                        <div class="cart-item">
+                            <img src="${item.image_url}" alt="${item.name}" class="cart-item-image">
+                            <div class="cart-item-details">
+                                <h4>${item.name}</h4>
+                                <p>Price: $${item.price.toFixed(2)}</p>
+                                <p>Quantity: ${item.quantity}</p>
+                                <p>Total: $${itemTotal.toFixed(2)}</p>
+                                <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                    cartItemsContainer.innerHTML += cartItem;
+                });
+            }
+            cartTotalElement.textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        document.getElementById('checkout-button').addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            window.location.href = '/checkout';
+        });
+
+        renderCart();
+    </script>
+</body>
+</html>
