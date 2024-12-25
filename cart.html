@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart | CaliDef Collectables</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -12,9 +12,9 @@
         <nav class="navbar">
             <div class="logo"><a href="/">CaliDef</a></div>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#categories">Shop</a></li>
-                <li><a href="/cart">Cart</a></li>
+                <li><a href="cart.html">Cart</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -85,6 +85,6 @@
     </section>
 
     <!-- JavaScript for handling cart actions -->
-    <script src="{{ url_for('static', filename='js/cart.js') }}" defer></script>
+    <script src="cart.js" defer></script>
 </body>
 </html>
