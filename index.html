@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CaliDef Collectables</title>
-   <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <header>
         <nav class="navbar">
-            <div class="logo">CaliDef</div>
+            <div class="logo"><a href="/">CaliDef</a></div>
             <ul class="nav-links">
                 <li class="dropdown">
                     <a href="#">Home</a>
@@ -32,18 +32,17 @@
                 <li><a href="#pre-order">Pre-Order</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-           <!-- Cart Button -->
-           <button class="cart-btn" onclick="location.href='/cart'">View Cart</button>
-           </ul>
-    </nav>
-</header>
+            <!-- Cart Button -->
+            <button class="cart-btn" onclick="location.href='/cart'">View Cart</button>
+        </nav>
+    </header>
 
     <!-- Hero Parallax Section -->
     <section class="parallax" style="background-image: url('CaliDef header.png');">
         <div class="parallax-title">
             <h1>Welcome to CaliDef Collectables</h1>
-            <p>Your Gateway To Garabge Pail Kids Cards, Merch, and Unique Custom Collectables!</p>
-            <button class="cta">Shop Now</button>
+            <p>Your Gateway To Garbage Pail Kids Cards, Merch, and Unique Custom Collectables!</p>
+            <button class="cta" onclick="location.href='#categories'">Shop Now</button>
         </div>
     </section>
 
@@ -201,17 +200,17 @@
         </div>
     </section>
 
-<!-- Testimonials Section -->
-<section id="testimonials" class="testimonials">
-    <h2 class="section-title">What Our Customers Say</h2>
-    <div class="testimonial-grid">
-        <div class="testimonial-card">
-            <p>"CaliDef has amazing products and fast delivery!"</p>
-            <span class="testimonial-author">- Jane D.</span>
-        </div>
-        <div class="testimonial-card">
-            <p>"Great customer service and incredible deals. Love it!"</p>
-            <span class="testimonial-author">- Mark R.</span>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"CaliDef has amazing products and fast delivery!"</p>
+                <span class="testimonial-author">- Jane D.</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"Great customer seble deals. Love it!"</>
+                            <span class="testimonial-author">- Mark R.</span>
         </div>
         <div class="testimonial-card">
             <p>"I found everything I needed in one place. Perfect!"</p>
@@ -263,7 +262,7 @@
     <p class="footer-note">&copy; 2024 CaliDef Collectables. All Rights Reserved.</p>
 </footer>
 
-<script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+<script src="index.js" defer></script>
 
 </body>
 </html>
