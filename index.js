@@ -218,6 +218,19 @@ fetch('https://Chedder78.pythonanywhere.com/execute-payment', {
 
     updateButtons();
 
+    if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/service-worker.js") // Ensure this path matches your actual service worker file location.
+      .then((registration) => {
+        console.log("Service Worker registered with scope:", registration.scope);
+      })
+      .catch((error) => {
+        console.error("Service Worker registration failed:", error); // No change needed; logs registration errors.
+      });
+  });
+}
+
     // Fetch and Render Products
     const fetchProducts = async () => {
         try {
