@@ -1,0 +1,21 @@
+{
+  "name": "CaliDef Collectables", // Change to your app's full name.
+  "short_name": "CaliDef", // Change to a shorter name for the app (e.g., shown on the home screen).
+  "description": "An e-commerce store for trading cards and merchandise.", // Update with your app's description.
+  "start_url": "/index.html", // Ensure this matches the entry point of your site (update if using a custom domain or subfolder).
+  "display": "standalone", // Typically "standalone" for a PWA; no change needed unless you want a browser UI.
+  "background_color": "#ffffff", // Change to your app's background color.
+  "theme_color": "#000000", // Change to match your site's theme color.
+  "icons": [
+    {
+      "src": "calidef_logo_icon.png", // Replace with the path to your 192x192 icon.
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "calidef_logo.png", // Replace with the path to your 512x512 icon.
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
