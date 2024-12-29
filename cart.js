@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const discountCodeInput = document.getElementById('discount-code');
     const applyDiscountButton = document.getElementById('apply-discount');
 
+    if (!cartItems || !cartTotal || !checkoutButton || !discountCodeInput || !applyDiscountButton) {
+        console.error('One or more elements are missing.');
+        return;
+    }
+
     // Function to update the cart total
     function updateCartTotal() {
         let total = 0;
@@ -28,23 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         event.target.closest('.cart-item').remove();
                         updateCartTotal();
                     }
-                });
-        }
-    });
-
-    // Event listener for saving items for later
-    cartItems.addEventListener('click', function(event) {
-        if (event.target.classList.contains('save-btn')) {
-            const productId = event.target.getAttribute('data-product-id');
-            // Save the item for later (you'll need to implement this on the server side)
-            fetch(`/save_for_later/${productId}`, { method: 'POST' })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        event.target.closest('.cart-item').remove();
-                        updateCartTotal();
-                    }
-                });
+                })
+                .catch(error => console.error('Error:', error));
         }
     });
 
@@ -69,7 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     item.querySelector('.item-total').textContent = `$${data.new_total}`;
                     updateCartTotal();
                 }
-            });
+            })
+            .catch(error => console.error('Error:', error));
         }
     });
 
@@ -90,7 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Update the cart total with the discount applied
                 updateCartTotal();
             }
-        });
+        })
+        .catch(error => console.error('Error:', error));
     });
 
     // Initial cart total update
