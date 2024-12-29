@@ -10,7 +10,11 @@
     <!-- Navigation Bar -->
     <header>
         <nav class="navbar">
-            <div class="logo"><img src="calidef_logo.png">CaliDef</a></div>
+            <div class="logo">
+                <a href="/">
+                    <img src="calidef_logo.png" alt="CaliDef Logo" style="height: 50px;">
+                </a>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#categories">Shop</a></li>
@@ -39,7 +43,6 @@
                             <p>Price: ${{ item.price }}</p>
                             <p>Total: $<span class="item-total">{{ item.total }}</span></p>
                             <button class="remove-btn" data-product-id="{{ item.product_id }}">Remove</button>
-                            <button class="save-btn" data-product-id="{{ item.product_id }}">Save for Later</button>
                         </div>
                     </div>
                 {% endfor %}
