@@ -89,5 +89,13 @@
 
     <!-- JavaScript for handling cart actions -->
     <script src="cart.js" defer></script>
+    <script>
+        // Example: Using has() method for better user interactions
+        document.querySelectorAll('.cart-item').forEach(item => {
+            if (item.querySelector('.quantity-input').value > 1) {
+                item.classList.add('multiple-items');
+            }
+        });
+    </script>
 </body>
 </html>
