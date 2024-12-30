@@ -1,3 +1,10 @@
+// index.js
+
+// Example of using has() method for better performance
+if (document.querySelector('.navbar').classList.contains('navbar')) {
+    console.log('Navbar exists');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Dropdown Menu Functionality
     const dropdowns = document.querySelectorAll('.dropdown');
