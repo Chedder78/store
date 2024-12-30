@@ -201,7 +201,7 @@ ipyparallel==8.3.0
 ipython==8.30.0
 ipython-genutils==0.2.0
 ipywidgets==7.7.0
-isodate==0.6.1
+isodate==0.7.2
 isort==5.10.1
 itemadapter==0.6.0
 itemloaders==1.0.4
