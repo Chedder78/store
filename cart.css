@@ -22,28 +22,28 @@ body {
     background-color: var(--primary-color);
     padding: 1rem 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-.navbar .logo img {
-    height: 50px;
-}
+    .logo img {
+        height: 50px;
+    }
 
-.navbar .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
 
-.navbar .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    transition: color 0.3s;
-}
+        li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            transition: color 0.3s;
 
-.navbar .nav-links li a:hover {
-    color: var(--secondary-color);
+            &:hover {
+                color: var(--secondary-color);
+            }
+        }
+    }
 }
 
 /* Cart Section */
@@ -51,94 +51,85 @@ body {
     padding: 2rem 1rem;
     display: grid;
     gap: 1.5rem;
-}
 
-.cart-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    .cart-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
 
-    @container (min-width: 600px) {
-        grid-template-columns: 2fr 1fr;
+        @container (min-width: 600px) {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            &.multiple-items {
+                border: 2px solid var(--secondary-color);
+            }
+
+            .cart-item-details {
+                display: grid;
+                gap: 0.5rem;
+
+                .quantity-input {
+                    width: 50px;
+                }
+
+                .remove-btn {
+                    background: var(--primary-color);
+                    color: white;
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background 0.3s;
+
+                    &:hover {
+                        background: var(--secondary-color);
+                    }
+                }
+            }
+        }
+
+        .cart-summary {
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: grid;
+            gap: 1rem;
+
+            .apply-discount-btn,
+            .checkout-btn {
+                background: var(--primary-color);
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s;
+
+                &:hover {
+                    background: var(--secondary-color);
+                }
+            }
+        }
     }
-}
-
-.cart-item {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 1rem;
-    padding: 1rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    align-items: center;
-}
-
-.cart-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.cart-item-details {
-    display: grid;
-    gap: 0.5rem;
-}
-
-.quantity-input {
-    width: 50px;
-}
-
-.remove-btn {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.remove-btn:hover {
-    background: var(--secondary-color);
-}
-
-.cart-summary {
-    padding: 1rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: grid;
-    gap: 1rem;
-}
-
-.apply-discount-btn {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.apply-discount-btn:hover {
-    background: var(--secondary-color);
-}
-
-.checkout-btn {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.checkout-btn:hover {
-    background: var(--secondary-color);
 }
 
 /* Checkout Form */
@@ -146,33 +137,33 @@ body {
     padding: 2rem 1rem;
     display: grid;
     gap: 1.5rem;
-}
 
-.checkout form {
-    display: grid;
-    gap: 1rem;
-}
+    form {
+        display: grid;
+        gap: 1rem;
 
-.checkout form label {
-    font-weight: bold;
-}
+        label {
+            font-weight: bold;
+        }
 
-.checkout form input {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        input {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-.checkout-btn {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
+        .checkout-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
 
-.checkout-btn:hover {
-    background: var(--secondary-color);
+            &:hover {
+                background: var(--secondary-color);
+            }
+        }
+    }
 }
