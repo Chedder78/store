@@ -84,37 +84,56 @@
         </div>
     </section>
 
-    <!-- OS Section -->
+<!-- OS Section -->
 <section class="products">
-      <h1>Original Series</h1>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Product 1" loading="lazy">
-                <h3>Holder</h3>
-                <p>$0.00</p>
-                <button>Add to Cart</button>
-             </div> 
-         </div>
-      </div> 
-     <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Product 2" loading="lazy">
-                <h3>Holder</h3>
-                <p>$0.00</p>
-                <button>Add to Cart</button>
-             </div> 
-         </div> 
-      </div>
-     <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Product 3" loading="lazy">
-                <h3>Holder</h3>
-                <p>$0.00</p>
-                <button>Add to Cart</button>
-              </div> 
-          </div> 
-      </div>
+    <h1>Original Series</h1>
+    <div class="product-grid">
+        <div class="product-card" onclick="openModal('product3')">
+            <img src="images/os3.png" alt="OS3" loading="lazy">
+            <h3>OS3 Complete Base Set</h3>
+            <p>$75.00</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="openModal('product4')">
+            <img src="images/os4.png" alt="OS4" loading="lazy">
+            <h3>OS4 Complete Variation Set</h3>
+            <p>$100.00</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="openModal('product5')">
+            <img src="images/os5.png" alt="OS5" loading="lazy">
+            <h3>OS5 Complete Base Set</h3>
+            <p>$85.00</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="openModal('product6')">
+            <img src="images/os6.png" alt="OS6" loading="lazy">
+            <h3>OS6 Complete Base Set</h3>
+            <p>$90.00</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
 </section>
+
+<!-- Modal -->
+<div id="productModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <div class="modal-slide" id="product3">
+            <img src="images/os3.png" alt="OS3">
+        </div>
+        <div class="modal-slide" id="product4">
+            <img src="images/os4.png" alt="OS4">
+        </div>
+        <div class="modal-slide" id="product5">
+            <img src="images/os5.png" alt="OS5">
+        </div>
+        <div class="modal-slide" id="product6">
+            <img src="images/os6.png" alt="OS6">
+        </div>
+    </div>
+</div>
+
 
     <!-- Parallax Section -->
 <section class="parallax" style="background-image: url('images/pop_cult_kids.jpg'), height: 500px;">
