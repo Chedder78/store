@@ -225,6 +225,19 @@ fetch('https://Chedder78.pythonanywhere.com/execute-payment', {
 
     updateButtons();
 
+    function openModal(productId) {
+    document.getElementById('productModal').style.display = 'block';
+    document.getElementById(productId).style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('productModal').style.display = 'none';
+    const slides = document.getElementsByClassName('modal-slide');
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+    }
+}
+
     if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
