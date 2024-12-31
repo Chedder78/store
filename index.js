@@ -290,5 +290,27 @@ function closeModal() {
         }
     };
 
+    function openModal(productId) {
+    document.getElementById('productModal').style.display = 'block';
+    document.getElementById(productId).style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('productModal').style.display = 'none';
+    const slides = document.getElementsByClassName('modal-slide');
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+    }
+}
+
+function startReflection(element) {
+    element.querySelector('::before').style.animation = 'gradientAnimation 3s infinite';
+}
+
+function stopReflection(element) {
+    element.querySelector('::before').style.animation = 'none';
+}
+
+
     fetchProducts();
 });
