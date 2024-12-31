@@ -137,39 +137,98 @@ body {
     }
 }
 
-/* Categories Section */
-.categories {
-    padding: 3rem 1rem;
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.category {
+    flex: 1 1 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.category-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.category p {
+    margin: 0;
+    font-size: 1.2em;
     text-align: center;
-    background: #f5f7fa;
+}
 
-    h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        color: var(--primary-color);
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    transform: skewX(-25deg);
+    transition: left 0.5s;
+}
+
+.category:hover::before {
+    left: 100%;
+}
+
+@keyframes staggeredAnimation {
+    0%, 100% {
+        left: -100%;
     }
-
-    .category-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-
-        .category {
-            background: white;
-            border-radius: 8px;
-            padding: 1rem 2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background 0.3s, box-shadow 0.3s;
-
-            &:hover {
-                background: #e4f1ff;
-                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            }
-        }
+    50% {
+        left: 100%;
     }
+}
+
+.category:nth-child(1)::before {
+    animation: staggeredAnimation 3s infinite;
+}
+
+.category:nth-child(2)::before {
+    animation: staggeredAnimation 3s infinite 0.5s;
+}
+
+.category:nth-child(3)::before {
+    animation: staggeredAnimation 3s infinite 1s;
+}
+
+.category:nth-child(4)::before {
+    animation: staggeredAnimation 3s infinite 1.5s;
+}
+
+.category:nth-child(5)::before {
+    animation: staggeredAnimation 3s infinite 2s;
+}
+
+.category:nth-child(6)::before {
+    animation: staggeredAnimation 3s infinite 2.5s;
+}
+
+.category:nth-child(7)::before {
+    animation: staggeredAnimation 3s infinite 3s;
+}
+
+.category:nth-child(8)::before {
+    animation: staggeredAnimation 3s infinite 3.5s;
 }
 
 /* Product Grid */
