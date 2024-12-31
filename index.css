@@ -231,13 +231,49 @@ body {
     animation: staggeredAnimation 3s infinite 3.5s;
 }
 
-/* Product Grid */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+button {
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background: #009edc;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem 1rem;
-        }
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+}
 
 .product-card {
     flex: 0 0 auto;
@@ -251,25 +287,25 @@ body {
     position: relative;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-        }
+}
 
 .product-card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        }  
+}
 
 .product-card::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
     border-radius: 15px;
     background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
     background-size: 400% 400%;
-    animation: gradientAnimation 3s ease infinite;
     z-index: -1;
+    transition: background-position 1s;
 }
 
 @keyframes gradientAnimation {
@@ -302,6 +338,7 @@ body {
     align-items: center;
     height: 100%;
 }
+
 .modal-slide {
     display: none;
     text-align: center;
@@ -321,44 +358,7 @@ body {
     cursor: pointer;
 }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
-        }
-
-        p {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 1rem;
-        }
-
-        button {
-            background: var(--secondary-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: background 0.3s, box-shadow 0.3s;
-
-            &:hover {
-                background: #009edc;
-                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            }
-        }
-    }
-}
+       
 
 /* Footer */
 .footer {
