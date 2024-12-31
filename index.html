@@ -101,55 +101,25 @@
         </div>
     </section>
 
-    <!-- ANS Section -->
-    <section id="all-new-series-sets" class="all-new-series-sets">
-        <h2>Micro Cards</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="ans image" loading="lazy">
-                <h3>ANS 1</h3>
-                <p>Complete Set: $95.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="" alt="ans image" loading="lazy">
-                <h3>ANS 2</h3>
-                <p>Complete Set: $95.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="" alt="ans image" loading="lazy">
-                <h3>ANS 3</h3>
-                <p>Complete Set: $95.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="" alt="ans image" loading="lazy">
-                <h3>ANS 4</h3>
-                <p>Complete Set: $95.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="" alt="ans image" loading="lazy">
-                <h3>ANS 5</h3>
-                <p>Complete Set: $95.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="" alt="ans image" loading="lazy">
-                <h3>ANS 6</h3>
-                <p>Complete Set: $95.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="" alt="ans image" loading="lazy">
-                <h3>ANS 7</h3>
-                <p>Complete Set: $95.00</p>
-                <button>Add to Cart</button>
-            </div>
+  <!-- All New Series Section -->
+<section id="all-new-series" class="products">
+    <h2>All New Series</h2>
+    <div class="product-grid">
+        <div class="product-card" onclick="openModal('ans1')">
+            <img src="images/ans1.png" alt="ANS 1" loading="lazy">
+            <h3>ANS 1 Complete Set</h3>
+            <p>$95.00</p>
+            <button>Add to Cart</button>
         </div>
-    </section>
-
+        <div class="product-card" onclick="openModal('ans2')">
+            <img src="images/ans2.png" alt="ANS 2" loading="lazy">
+            <h3>ANS 2 Complete Set</h3>
+            <p>$100.00</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</section>
+    
     <!-- Parallax Section -->
     <section class="parallax" style="background-image: url('gpk_faces.jpg'); height: 500px;">
         <div class="parallax-title">
@@ -157,24 +127,119 @@
         </div>
     </section>
 
-    <!-- Refractors Section -->
-    <section id="refractors" class="refractors">
-        <h2>Refractors Collection</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Refractor 1" loading="lazy">
-                <h3>Adam Bomb Custom Refractor</h3>
-                <p>Custom Refractors consists of 5 layers meticulously placed in specific order to achieve the highest quality look: $39.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Refractor 2" loading="lazy">
-                <h3>Adam Bomb Glow Card</h3>
-                <p>Choose from 6 different glow-in-the-dark colors. They are red, blue, orange, pink, yellow, and white: $25.00 each</p>
-                <button>Add to Cart</button>
-            </div>
+ <!-- Chrome Series Sets Section -->
+<section id="chrome-series-sets" class="products">
+    <h2>Chrome Series Sets</h2>
+    <div class="product-grid">
+        <div class="product-card" onclick="openModal('chrome1')">
+            <img src="images/chrome1.png" alt="Chrome Series 1" loading="lazy">
+            <h3>Chrome Series 1 Complete Set</h3>
+            <p>$120.00</p>
+            <button>Add to Cart</button>
         </div>
-    </section>
+        <div class="product-card" onclick="openModal('chrome2')">
+            <img src="images/chrome2.png" alt="Chrome Series 2" loading="lazy">
+            <h3>Chrome Series 2 Complete Set</h3>
+            <p>$130.00</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+    <!-- Themed Series Sets Section -->
+<section id="themed-series-sets" class="products">
+    <h2>Themed Series Sets</h2>
+    <div class="product-grid">
+        <div class="product-card" onclick="openModal('theme1')">
+            <img src="images/theme1.png" alt="Theme Series 1" loading="lazy">
+            <h3>Theme Series 1 Complete Set</h3>
+            <p>$110.00</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="openModal('theme2')">
+            <img src="images/theme2.png" alt="Theme Series 2" loading="lazy">
+            <h3>Theme Series 2 Complete Set</h3>
+            <p>$115.00</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+    <!-- Garbage Pail Kids Single Cards Section -->
+<section id="gpk-single-cards" class="products">
+    <h2>Garbage Pail Kids Single Cards</h2>
+    <div class="product-grid">
+        <div class="product-card" onclick="openModal('gpk1')">
+            <img src="images/gpk1.png" alt="GPK Single 1" loading="lazy">
+            <h3>GPK Single Card 1</h3>
+            <p>$10.00</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="openModal('gpk2')">
+            <img src="images/gpk2.png" alt="GPK Single 2" loading="lazy">
+            <h3>GPK Single Card 2</h3>
+            <p>$12.00</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+    <!-- World's Best Micro Section -->
+<section id="worlds-best-micro" class="products">
+    <h2>World's Best Micro</h2>
+    <div class="product-grid">
+        <div class="product-card" onclick="openModal('micro1')">
+            <img src="images/micro1.png" alt="Micro 1" loading="lazy">
+            <h3>Micro Card 1</h3>
+            <p>$5.00</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="openModal('micro2')">
+            <img src="images/micro2.png" alt="Micro 2" loading="lazy">
+            <h3>Micro Card 2</h3>
+            <p>$6.00</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+    <!-- Custom Made Refractors Section -->
+<section id="custom-refractors" class="products">
+    <h2>Custom Made Refractors</h2>
+    <div class="product-grid">
+        <div class="product-card" onclick="openModal('refractor1')">
+            <img src="images/refractor1.png" alt="Custom Refractor 1" loading="lazy">
+            <h3>Custom Refractor 1</h3>
+            <p>$50.00</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="openModal('refractor2')">
+            <img src="images/refractor2.png" alt="Custom Refractor 2" loading="lazy">
+            <h3>Custom Refractor 2</h3>
+            <p>$55.00</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+    <!-- Custom Made Novelty Items Section -->
+<section id="custom-novelty-items" class="products">
+    <h2>Custom Made Novelty Items</h2>
+    <div class="product-grid">
+        <div class="product-card" onclick="openModal('novelty1')">
+            <img src="images/novelty1.png" alt="Custom Novelty 1" loading="lazy">
+            <h3>Custom Novelty Item 1</h3>
+            <p>$20.00</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="openModal('novelty2')">
+            <img src="images/novelty2.png" alt="Custom Novelty 2" loading="lazy">
+            <h3>Custom Novelty Item 2</h3>
+            <p>$25.00</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</section>
 
     <!-- Footer Section -->
     <footer id="contact" class="footer">
