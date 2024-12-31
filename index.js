@@ -21,36 +21,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    fetch('https://Chedder78.pythonanywhere.com/create-payment', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ total: '20.00', description: 'Order #123' })
-})
-.then(response => response.json())
-.then(data => {
-    if (data.approval_url) {
-        window.location.href = data.approval_url; // Redirect to PayPal for payment
-    } else {
-        console.error('Error:', data);
-    }
-});
-const queryParams = new URLSearchParams(window.location.search);
-const paymentId = queryParams.get('paymentId');
-const payerId = queryParams.get('PayerID');
+    const apiUrl = 'https://Chedder78.pythonanywhere.com';
 
-fetch('https://Chedder78.pythonanywhere.com/execute-payment', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ paymentId, PayerID: payerId })
-})
-.then(response => response.json())
-.then(data => {
-    console.log('Payment Success:', data);
-})
-.catch(error => {
-    console.error('Payment Error:', error);
-});
+    fetch(`${apiUrl}/create-payment`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ total: '20.00', description: 'Order #123' })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.approval_url) {
+            window.location.href = data.approval_url; // Redirect to PayPal for payment
+        } else {
+            console.error('Error:', data);
+        }
+    });
 
+    const queryParams = new URLSearchParams(window.location.search);
+    const paymentId = queryParams.get('paymentId');
+    const payerId = queryParams.get('PayerID');
+
+    fetch(`${apiUrl}/execute-payment`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ paymentId, PayerID: payerId })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Payment Success:', data);
+    })
+    .catch(error => {
+        console.error('Payment Error:', error);
+    });
 
     // Scrolling Feature with Scrollbar
     const scrollingSections = document.querySelectorAll('.scrolling-container');
@@ -72,8 +74,8 @@ fetch('https://Chedder78.pythonanywhere.com/execute-payment', {
             const thumbWidth = Math.max(50, (container.clientWidth / container.scrollWidth) * 100);
             const scrollLeft = container.scrollLeft;
 
-            scrollThumb.style.width = thumbWidth + '%';
-            scrollThumb.style.transform = 'translateX(' + ((scrollLeft / scrollWidth) * 100) + '%)';
+            scrollThumb.style.width = `${thumbWidth}%`;
+            scrollThumb.style.transform = `translateX(${(scrollLeft / scrollWidth) * 100}%)`;
         };
 
         container.addEventListener('scroll', updateThumbPosition);
@@ -110,8 +112,8 @@ fetch('https://Chedder78.pythonanywhere.com/execute-payment', {
         button.addEventListener('click', function (e) {
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();
-            ripple.style.left = (e.clientX - rect.left) + 'px';
-            ripple.style.top = (e.clientY - rect.top) + 'px';
+            ripple.style.left = `${e.clientX - rect.left}px`;
+            ripple.style.top = `${e.clientY - rect.top}px`;
             ripple.classList.add('ripple-effect');
             this.appendChild(ripple);
 
@@ -225,31 +227,33 @@ fetch('https://Chedder78.pythonanywhere.com/execute-payment', {
 
     updateButtons();
 
+    // Modal Functions
     function openModal(productId) {
-    document.getElementById('productModal').style.display = 'block';
-    document.getElementById(productId).style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('productModal').style.display = 'none';
-    const slides = document.getElementsByClassName('modal-slide');
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
+        document.getElementById('productModal').style.display = 'block';
+        document.getElementById(productId).style.display = 'block';
     }
-}
 
+    function closeModal() {
+        document.getElementById('productModal').style.display = 'none';
+        const slides = document.getElementsByClassName('modal-slide');
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+    }
+
+    // Service Worker Registration
     if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/service-worker.js") // Ensure this path matches your actual service worker file location.
-      .then((registration) => {
-        console.log("Service Worker registered with scope:", registration.scope);
-      })
-      .catch((error) => {
-        console.error("Service Worker registration failed:", error); // No change needed; logs registration errors.
-      });
-  });
-}
+        window.addEventListener("load", () => {
+            navigator.serviceWorker
+                .register("/service-worker.js") // Ensure this path matches your actual service worker file location.
+                .then((registration) => {
+                    console.log("Service Worker registered with scope:", registration.scope);
+                })
+                .catch((error) => {
+                    console.error("Service Worker registration failed:", error); // No change needed; logs registration errors.
+                });
+        });
+    }
 
     // Fetch and Render Products
     const fetchProducts = async () => {
@@ -290,48 +294,5 @@ function closeModal() {
         }
     };
 
-    function openModal(productId) {
-    document.getElementById('productModal').style.display = 'block';
-    document.getElementById(productId).style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('productModal').style.display = 'none';
-    const slides = document.getElementsByClassName('modal-slide');
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
-    }
-}
-
-function startReflection(element) {
-    element.querySelector('::before').style.animation = 'gradientAnimation 3s infinite';
-}
-
-function stopReflection(element) {
-    element.querySelector('::before').style.animation = 'none';
-}
-
-
     fetchProducts();
 });
-
-function openModal(productId) {
-    document.getElementById('productModal').style.display = 'block';
-    document.getElementById(productId).style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('productModal').style.display = 'none';
-    const slides = document.getElementsByClassName('modal-slide');
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
-    }
-}
-
-function startReflection(element) {
-    element.querySelector('::before').style.animation = 'gradientAnimation 3s infinite';
-}
-
-function stopReflection(element) {
-    element.querySelector('::before').style.animation = 'none';
-}
