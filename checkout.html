@@ -42,22 +42,22 @@
         <h2 class="section-title">Checkout</h2>
         <form action="{{ url_for('pay') }}" method="POST">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" aria-label="Name" required aria-required="true">
             
             <label for="street_address">Street Address:</label>
-            <input type="text" id="street_address" name="street_address" required>
+            <input type="text" id="street_address" name="street_address" aria-label="Street Address" required aria-required="true">
             
             <label for="apt_suite_unit">Apartment, Suite, Unit (optional):</label>
-            <input type="text" id="apt_suite_unit" name="apt_suite_unit">
+            <input type="text" id="apt_suite_unit" name="apt_suite_unit" aria-label="Apartment, Suite, Unit">
             
             <label for="city">City:</label>
-            <input type="text" id="city" name="city" required>
+            <input type="text" id="city" name="city" aria-label="City" required aria-required="true">
             
             <label for="state">State:</label>
-            <input type="text" id="state" name="state" required>
+            <input type="text" id="state" name="state" aria-label="State" required aria-required="true">
             
             <label for="zip">ZIP Code:</label>
-            <input type="text" id="zip" name="zip" required>
+            <input type="text" id="zip" name="zip" aria-label="ZIP Code" pattern="\d{5}" title="Please enter a valid ZIP code" required aria-required="true">
             
             <button type="submit" class="checkout-btn">Proceed to PayPal</button>
         </form>
@@ -75,7 +75,7 @@
                 <div class="summary"></div>
                 <div class="email-container">
                     <fieldset class="email-input-with-watermark">
-                        <input id="email-input" name="email" type="email" placeholder="Email" autocomplete="email" />
+                        <input id="email-input" name="email" type="email" placeholder="Email" aria-label="Email" autocomplete="email" required aria-required="true" />
                         <div id="watermark-container"></div>
                     </fieldset>
                     <button id="email-submit-button" type="button" class="submit-button" disabled>Continue</button>
@@ -92,18 +92,18 @@
                 <div class="summary"></div>
                 <fieldset>
                     <span>
-                        <input id="shipping-required-checkbox" name="shipping-required" type="checkbox" checked />
+                        <input id="shipping-required-checkbox" name="shipping-required" type="checkbox" checked aria-label="Shipping Required" />
                         <label for="shipping-required-checkbox">This purchase requires shipping</label>
                     </span>
-                    <input name="first-name" placeholder="First name" autocomplete="given-name" />
-                    <input name="middle-initial" placeholder="Middle initial (optional)" autocomplete="additional-name" />
-                    <input name="last-name" placeholder="Last name" autocomplete="family-name" />
-                    <input name="address-line1" placeholder="Street address" autocomplete="address-line1" />
-                    <input name="address-line2" placeholder="Apt., ste., bldg. (optional)" autocomplete="address-line2" />
-                    <input name="address-level2" placeholder="City" autocomplete="address-level2" />
-                    <input name="address-level1" placeholder="State" autocomplete="address-level1" />
-                    <input name="postal-code" placeholder="ZIP code" autocomplete="postal-code" />
-                    <input name="tel-national" type="tel" placeholder="Phone number" autocomplete="tel-national" />
+                    <input name="first-name" placeholder="First name" aria-label="First name" autocomplete="given-name" required aria-required="true" />
+                    <input name="middle-initial" placeholder="Middle initial (optional)" aria-label="Middle initial" autocomplete="additional-name" />
+                    <input name="last-name" placeholder="Last name" aria-label="Last name" autocomplete="family-name" required aria-required="true" />
+                    <input name="address-line1" placeholder="Street address" aria-label="Street address" autocomplete="address-line1" required aria-required="true" />
+                    <input name="address-line2" placeholder="Apt., ste., bldg. (optional)" aria-label="Address Line 2" autocomplete="address-line2" />
+                    <input name="address-level2" placeholder="City" aria-label="City" autocomplete="address-level2" required aria-required="true" />
+                    <input name="address-level1" placeholder="State" aria-label="State" autocomplete="address-level1" required aria-required="true" />
+                    <input name="postal-code" placeholder="ZIP code" aria-label="ZIP code" pattern="\d{5}" title="Please enter a valid ZIP code" autocomplete="postal-code" required aria-required="true" />
+                    <input name="tel-national" type="tel" placeholder="Phone number" aria-label="Phone number" autocomplete="tel-national" />
                 </fieldset>
                 <button id="shipping-submit-button" type="button" class="submit-button">Continue</button>
             </section>
@@ -147,7 +147,7 @@
     </footer>
 
     <script src="checkout.js" defer></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=AYOeyCQvilLVKJGjslZfFSi_Nkl7A6OfXNarj5lS55iUcQXMhpp3AypVjAVkS_qvPcO5D415b9SnBFuN&components=buttons%2Cfastlane" data-sdk-client-token="eyJr[...]
+    <script src="https://www.paypal.com/sdk/js?client-id=AYOeyCQvilLVKJGjslZfFSi_Nkl7A6OfXNarj5lS55iUcQXMhpp3AypVjAVkS_qvPcO5D415b9SnBFuN&components=buttons%2Cfastlane" data-sdk-client-token="eyJr[...]\"></script>
     <script>
         // Example: Using has() method for better user interactions
         document.querySelectorAll('.cart-item').forEach(item => {
