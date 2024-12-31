@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar">
             <a href="spinning_heads_page.html" class="logo">
-                <img src="image/calidef_logo.png" alt="CaliDef Logo" height="50" loading="lazy">
+                <img src="images/calidef_logo.png" alt="CaliDef Logo" height="50" loading="lazy">
             </a>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
@@ -30,7 +30,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="parallax" style="background-image: url('gpk_vertical_circle.png'); height: 300px;">
+    <section class="parallax" style="background-image: url('images/checkout_background.jpg'); height: 500px;">
         <div class="parallax-title">
             <h1>Checkout</h1>
             <p>Complete your purchase securely</p>
@@ -43,84 +43,23 @@
         <form action="{{ url_for('pay') }}" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" aria-label="Name" required aria-required="true">
-            
+
             <label for="street_address">Street Address:</label>
             <input type="text" id="street_address" name="street_address" aria-label="Street Address" required aria-required="true">
-            
+
             <label for="apt_suite_unit">Apartment, Suite, Unit (optional):</label>
             <input type="text" id="apt_suite_unit" name="apt_suite_unit" aria-label="Apartment, Suite, Unit">
-            
+
             <label for="city">City:</label>
             <input type="text" id="city" name="city" aria-label="City" required aria-required="true">
-            
+
             <label for="state">State:</label>
             <input type="text" id="state" name="state" aria-label="State" required aria-required="true">
-            
+
             <label for="zip">ZIP Code:</label>
             <input type="text" id="zip" name="zip" aria-label="ZIP Code" pattern="\d{5}" title="Please enter a valid ZIP code" required aria-required="true">
-            
+
             <button type="submit" class="checkout-btn">Proceed to PayPal</button>
-        </form>
-    </section>
-
-    <!-- PayPal Integration -->
-    <section class="paypal-checkout">
-        <h2 class="section-title">Payment</h2>
-        <form>
-            <section id="customer" class="active visited">
-                <div class="header">
-                    <h2>Customer</h2>
-                    <button id="email-edit-button" type="button" class="edit-button">Edit</button>
-                </div>
-                <div class="summary"></div>
-                <div class="email-container">
-                    <fieldset class="email-input-with-watermark">
-                        <input id="email-input" name="email" type="email" placeholder="Email" aria-label="Email" autocomplete="email" required aria-required="true" />
-                        <div id="watermark-container"></div>
-                    </fieldset>
-                    <button id="email-submit-button" type="button" class="submit-button" disabled>Continue</button>
-                </div>
-            </section>
-
-            <hr />
-
-            <section id="shipping">
-                <div class="header">
-                    <h2>Shipping</h2>
-                    <button id="shipping-edit-button" type="button" class="edit-button">Edit</button>
-                </div>
-                <div class="summary"></div>
-                <fieldset>
-                    <span>
-                        <input id="shipping-required-checkbox" name="shipping-required" type="checkbox" checked aria-label="Shipping Required" />
-                        <label for="shipping-required-checkbox">This purchase requires shipping</label>
-                    </span>
-                    <input name="first-name" placeholder="First name" aria-label="First name" autocomplete="given-name" required aria-required="true" />
-                    <input name="middle-initial" placeholder="Middle initial (optional)" aria-label="Middle initial" autocomplete="additional-name" />
-                    <input name="last-name" placeholder="Last name" aria-label="Last name" autocomplete="family-name" required aria-required="true" />
-                    <input name="address-line1" placeholder="Street address" aria-label="Street address" autocomplete="address-line1" required aria-required="true" />
-                    <input name="address-line2" placeholder="Apt., ste., bldg. (optional)" aria-label="Address Line 2" autocomplete="address-line2" />
-                    <input name="address-level2" placeholder="City" aria-label="City" autocomplete="address-level2" required aria-required="true" />
-                    <input name="address-level1" placeholder="State" aria-label="State" autocomplete="address-level1" required aria-required="true" />
-                    <input name="postal-code" placeholder="ZIP code" aria-label="ZIP code" pattern="\d{5}" title="Please enter a valid ZIP code" autocomplete="postal-code" required aria-required="true" />
-                    <input name="tel-national" type="tel" placeholder="Phone number" aria-label="Phone number" autocomplete="tel-national" />
-                </fieldset>
-                <button id="shipping-submit-button" type="button" class="submit-button">Continue</button>
-            </section>
-
-            <hr />
-
-            <section id="payment">
-                <div class="header">
-                    <h2>Payment</h2>
-                    <button id="payment-edit-button" type="button" class="edit-button">Edit</button>
-                </div>
-                <fieldset>
-                    <div id="payment-component"></div>
-                </fieldset>
-            </section>
-
-            <button id="checkout-button" type="button" class="submit-button">Checkout</button>
         </form>
     </section>
 
@@ -147,14 +86,6 @@
     </footer>
 
     <script src="checkout.js" defer></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=AYOeyCQvilLVKJGjslZfFSi_Nkl7A6OfXNarj5lS55iUcQXMhpp3AypVjAVkS_qvPcO5D415b9SnBFuN&components=buttons%2Cfastlane" data-sdk-client-token="eyJr[...]\"></script>
-    <script>
-        // Example: Using has() method for better user interactions
-        document.querySelectorAll('.cart-item').forEach(item => {
-            if (item.querySelector('.quantity-input').value > 1) {
-                item.classList.add('multiple-items');
-            }
-        });
-    </script>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&components=buttons%2Cfastlane"></script>
 </body>
 </html>
