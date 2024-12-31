@@ -568,7 +568,7 @@ zope.browser==2.4
 zope.browserpage==4.4.0
 zope.browserresource==4.4
 zope.cachedescriptors==4.3.1
-zope.catalog==4.4.0
+zope.catalog==5.0
 zope.component==5.0.1
 zope.configuration==4.4.1
 zope.container==4.5.0
