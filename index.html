@@ -8,7 +8,7 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#FF0000, #FFFFFF, #0000FF">
     <meta name="description" content="Your Gateway To Garbage Pail Kids Cards, Merch, and Unique Custom Collectables!">
-    <meta name="keywords" content="Collectables, Garbage Pail Kids, GPK, OS1, OS2, OS3, Bootleg, Calidef, CaliDef, Original Series 1, Adam Bomb, Nasty Nick, Dead Ted, John Pound, Tom Bunk, Cards, Merch, Bukimi Kun, ANS, All New Series, Chrome Series 1, Topps GPK, Topps Chrome, Topps Sapphire, Custom Collectables">
+    <meta name="keywords" content="Collectables, Garbage Pail Kids, GPK, OS1, OS2, OS3, Bootleg, Calidef, CaliDef, Original Series 1, Adam Bomb, Nasty Nick, Dead Ted, John Pound, Tom Bunk, Cards, Merch, Collectables">
     <meta name="author" content="CaliDef Collectables">
 </head>
 <body>
@@ -23,7 +23,7 @@
                 <li><a href="#micro-cards">Micro Cards</a></li>
                 <li><a href="#refractors">Refractors</a></li>
                 <li><a href="#os-cards">OS GPK Cards</a></li>
-                
+            </ul>
             <button class="cart-btn" onclick="location.href='checkout.html'">View Cart</button>
         </nav>
     </header>
@@ -37,46 +37,6 @@
         </div>
     </section>
 
-   <!-- Categories Section -->
-<section id="categories" class="categories">
-    <h2>Explore The Store</h2>
-    <div class="category-list">
-        <div class="category" id="os-gpk-cards" onclick="location.href='#os-gpk-cards'">
-            <img src="images/os-gpk-cards-logo.png" alt="OS GPK Cards Logo" class="category-logo">
-            <p>OS GPK Cards</p>
-        </div>
-        <div class="category" id="all-new-series-sets" onclick="location.href='#all-new-series-sets'">
-            <img src="images/all-new-series-sets-logo.png" alt="All New Series Sets Logo" class="category-logo">
-            <p>All New Series Sets</p>
-        </div>
-        <div class="category" id="chrome-series-sets" onclick="location.href='#chrome-series-sets'">
-            <img src="images/chrome-series-sets-logo.png" alt="Chrome Series Sets Logo" class="category-logo">
-            <p>Chrome Series Sets</p>
-        </div>
-        <div class="category" id="themed-series-sets" onclick="location.href='#themed-series-sets'">
-            <img src="images/themed-series-sets-logo.png" alt="Themed Series Sets Logo" class="category-logo">
-            <p>Themed Series Sets</p>
-        </div>
-        <div class="category" id="refractors" onclick="location.href='#refractors'">
-            <img src="images/refractors-logo.png" alt="Refractors Logo" class="category-logo">
-            <p>Refractors</p>
-        </div>
-        <div class="category" id="micro-cards" onclick="location.href='#micro-cards'">
-            <img src="images/micro-cards-logo.png" alt="Micro Cards Logo" class="category-logo">
-            <p>Micro Cards</p>
-        </div>
-        <div class="category" id="custom-image-design" onclick="location.href='#custom-image-design'">
-            <img src="images/custom-image-design-logo.png" alt="Custom Image Design Logo" class="category-logo">
-            <p>Custom Image Design</p>
-        </div>
-        <div class="category" id="available-inventory" onclick="location.href='#available-inventory'">
-            <img src="images/available-inventory-logo.png" alt="Available Inventory Logo" class="category-logo">
-            <p>Available Inventory</p>
-        </div>
-    </div>
-</section>
-
-
     <!-- Parallax Section -->
     <section class="parallax" style="background-image: url('images/red_background_banner.jpg'), height: 500px;">
         <div class="parallax-title">
@@ -84,126 +44,110 @@
         </div>
     </section>
 
-<!-- OS Section -->
-<section class="products">
-    <h1>Original Series</h1>
-    <div class="product-grid">
-        <div class="product-card" onclick="openModal('product3')">
-            <img src="images/os3.png" alt="OS3" loading="lazy">
-            <h3>OS3 Complete Base Set</h3>
-            <p>$75.00</p>
-            <button>Add to Cart</button>
+    <!-- OS Section -->
+    <section class="products" id="os-cards">
+        <h1>Original Series</h1>
+        <div class="product-grid">
+            <div class="product-card" onclick="openModal('product3')">
+                <img src="images/os3.png" alt="OS3" loading="lazy">
+                <h3>OS3 Complete Base Set</h3>
+                <p>$75.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card" onclick="openModal('product4')">
+                <img src="images/os4.png" alt="OS4" loading="lazy">
+                <h3>OS4 Complete Variation Set</h3>
+                <p>$100.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card" onclick="openModal('product5')">
+                <img src="images/os5.png" alt="OS5" loading="lazy">
+                <h3>OS5 Complete Base Set</h3>
+                <p>$85.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card" onclick="openModal('product6')">
+                <img src="images/os6.png" alt="OS6" loading="lazy">
+                <h3>OS6 Complete Base Set</h3>
+                <p>$90.00</p>
+                <button>Add to Cart</button>
+            </div>
         </div>
-        <div class="product-card" onclick="openModal('product4')">
-            <img src="images/os4.png" alt="OS4" loading="lazy">
-            <h3>OS4 Complete Variation Set</h3>
-            <p>$100.00</p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="product-card" onclick="openModal('product5')">
-            <img src="images/os5.png" alt="OS5" loading="lazy">
-            <h3>OS5 Complete Base Set</h3>
-            <p>$85.00</p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="product-card" onclick="openModal('product6')">
-            <img src="images/os6.png" alt="OS6" loading="lazy">
-            <h3>OS6 Complete Base Set</h3>
-            <p>$90.00</p>
-            <button>Add to Cart</button>
+    </section>
+
+    <!-- Modal -->
+    <div id="productModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <div class="modal-slide" id="product3">
+                <img src="images/os3.png" alt="OS3">
+            </div>
+            <div class="modal-slide" id="product4">
+                <img src="images/os4.png" alt="OS4">
+            </div>
+            <div class="modal-slide" id="product5">
+                <img src="images/os5.png" alt="OS5">
+            </div>
+            <div class="modal-slide" id="product6">
+                <img src="images/os6.png" alt="OS6">
+            </div>
         </div>
     </div>
-</section>
-
-<!-- Modal -->
-<div id="productModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-        <div class="modal-slide" id="product3">
-            <img src="images/os3.png" alt="OS3">
-        </div>
-        <div class="modal-slide" id="product4">
-            <img src="images/os4.png" alt="OS4">
-        </div>
-        <div class="modal-slide" id="product5">
-            <img src="images/os5.png" alt="OS5">
-        </div>
-        <div class="modal-slide" id="product6">
-            <img src="images/os6.png" alt="OS6">
-        </div>
-    </div>
-</div>
-
 
     <!-- Parallax Section -->
-<section class="parallax" style="background-image: url('images/pop_cult_kids.jpg'), height: 500px;">
-      <div class="parallax-title">
-        <h1>All New Series Sets</h1>
-     </div>
-</section>
+    <section class="parallax" style="background-image: url('images/pop_cult_kids.jpg'), height: 500px;">
+        <div class="parallax-title">
+            <h1>All New Series Sets</h1>
+        </div>
+    </section>
 
     <!-- ANS Section -->
     <section id="all-new-series-sets" class="all-new-series-sets">
-      <h2>Micro Cards</h2>
+        <h2>Micro Cards</h2>
         <div class="product-grid">
             <div class="product-card">
                 <img src="https://via.placeholder.com/150" alt="ans image" loading="lazy">
-                  <h3>ANS 1</h3>
-                    <p>Complete Set:$95.00</p>
+                <h3>ANS 1</h3>
+                <p>Complete Set: $95.00</p>
                 <button>Add to Cart</button>
-                 </div> 
             </div>
-    </div> 
-         </div>
-         <div class="product-grid">
-             <div class="product-card">
+            <div class="product-card">
                 <img src="" alt="ans image" loading="lazy">
                 <h3>ANS 2</h3>
                 <p>Complete Set: $95.00</p>
                 <button>Add to Cart</button>
-          </div>    
-    </div>
-        </div>
             </div>
-         <div class="product-grid">
-              <div class="product-card">
+            <div class="product-card">
                 <img src="" alt="ans image" loading="lazy">
                 <h3>ANS 3</h3>
                 <p>Complete Set: $95.00</p>
                 <button>Add to Cart</button>
-            </div> 
-        </div>
-    </div>
-         <div class="product-grid">
-              <div class="product-card">
+            </div>
+            <div class="product-card">
                 <img src="" alt="ans image" loading="lazy">
                 <h3>ANS 4</h3>
                 <p>Complete Set: $95.00</p>
                 <button>Add to Cart</button>
-    </div> 
-            </div>      
-         <div class="product-grid">
-              <div class="product-card">
+            </div>
+            <div class="product-card">
                 <img src="" alt="ans image" loading="lazy">
                 <h3>ANS 5</h3>
                 <p>Complete Set: $95.00</p>
                 <button>Add to Cart</button>
             </div>
-         <div class="product-grid">
-             <div class="product-card">
+            <div class="product-card">
                 <img src="" alt="ans image" loading="lazy">
                 <h3>ANS 6</h3>
                 <p>Complete Set: $95.00</p>
                 <button>Add to Cart</button>
-            </div>      
-             
-              <div class="product-grid">
-                  <div class="product-card">
+            </div>
+            <div class="product-card">
                 <img src="" alt="ans image" loading="lazy">
                 <h3>ANS 7</h3>
                 <p>Complete Set: $95.00</p>
                 <button>Add to Cart</button>
             </div>
+        </div>
     </section>
 
     <!-- Parallax Section -->
@@ -220,46 +164,13 @@
             <div class="product-card">
                 <img src="https://via.placeholder.com/150" alt="Refractor 1" loading="lazy">
                 <h3>Adam Bomb Custom Refractor</h3>
-                <p>Custom Refractors consists of are 5 layers 
-                    meticulously placed in specific order
-                    to achieve the highest quality look: $39.99</p>
+                <p>Custom Refractors consists of 5 layers meticulously placed in specific order to achieve the highest quality look: $39.99</p>
                 <button>Add to Cart</button>
             </div>
-        <div class="product-grid">
             <div class="product-card">
                 <img src="https://via.placeholder.com/150" alt="Refractor 2" loading="lazy">
                 <h3>Adam Bomb Glow Card</h3>
-                <p>Choose from 6 different glow-in-the-dark
-                    colors. They are red, blue, orange, pink, 
-                    yellow, and white: $25.00 each</p>
-                <button>Add to Cart</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Parallax Section -->
-    <section class="parallax" style="background-image: url('images/')">
-        <div class="parallax-title">
-            <h1>ALL New Series 1 thru 7</h1>
-                <h3>(limited Inventory)</h3>
-        </div>
-    </section>
-
-    <!-- OS Cards Section -->
-    <section id="os-cards" class="os-cards">
-        <h2>Chrome eries Sets</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="ANS image" loading="lazy">
-                <h3>OS3 Complete Base Set</h3>
-                <p>$75.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="ANS Image" loading="lazy">
-                <h3>OS4 Complete Variation Set</h3>
-                <h2>Set includes all 4 name change variations</h2>
-                <p>$100.00</p>
+                <p>Choose from 6 different glow-in-the-dark colors. They are red, blue, orange, pink, yellow, and white: $25.00 each</p>
                 <button>Add to Cart</button>
             </div>
         </div>
