@@ -37,8 +37,23 @@ jobs:
         run: |
           # Run your build command here
           # Example: npm install && npm run build
-          npm install
-          npm run build
+          version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "No installation needed for static HTML"
+  build:
+    commands:
+      - echo "No build needed for static HTML"
+  post_build:
+    commands:
+      - echo "Build completed"
+
+artifacts:
+  files:
+    - '**/*'
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
