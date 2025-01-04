@@ -296,3 +296,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchProducts();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Modal Functions
+    function openModal(productId) {
+        document.getElementById('productModal').style.display = 'block';
+        document.getElementById(productId).style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('productModal').style.display = 'none';
+        const slides = document.getElementsByClassName('modal-slide');
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+    }
+
+    document.querySelector('.close').addEventListener('click', closeModal);
+});
