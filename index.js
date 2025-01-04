@@ -1,24 +1,11 @@
-// index.js
-
-// Example of using has() method for better performance
-if (document.querySelector('.navbar').classList.contains('navbar')) {
-    console.log('Navbar exists');
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     // Dropdown Menu Functionality
-    const dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(dropdown => {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
         const menu = dropdown.querySelector('.dropdown-menu');
         if (!menu) return;
 
-        dropdown.addEventListener('mouseover', () => {
-            menu.style.display = 'block';
-        });
-
-        dropdown.addEventListener('mouseout', () => {
-            menu.style.display = 'none';
-        });
+        dropdown.addEventListener('mouseover', () => menu.style.display = 'block');
+        dropdown.addEventListener('mouseout', () => menu.style.display = 'none');
     });
 
     const apiUrl = 'https://Chedder78.pythonanywhere.com';
@@ -35,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             console.error('Error:', data);
         }
-    });
+    })
+    .catch(error => console.error('Fetch Error:', error));
 
     const queryParams = new URLSearchParams(window.location.search);
     const paymentId = queryParams.get('paymentId');
@@ -47,16 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify({ paymentId, PayerID: payerId })
     })
     .then(response => response.json())
-    .then(data => {
-        console.log('Payment Success:', data);
-    })
-    .catch(error => {
-        console.error('Payment Error:', error);
-    });
+    .then(data => console.log('Payment Success:', data))
+    .catch(error => console.error('Payment Error:', error));
 
     // Scrolling Feature with Scrollbar
-    const scrollingSections = document.querySelectorAll('.scrolling-container');
-    scrollingSections.forEach(container => {
+    document.querySelectorAll('.scrolling-container').forEach(container => {
         const parentSection = container.closest('section');
         if (!parentSection) return;
 
@@ -78,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollThumb.style.transform = `translateX(${(scrollLeft / scrollWidth) * 100}%)`;
         };
 
-        container.addEventListener('scroll', updateThumbPosition);
+        container.addEventListener('scroll', updateThumbPosition, { passive: true });
 
         let isDragging = false;
         scrollThumb.addEventListener('mousedown', (e) => {
@@ -122,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Scroll-triggered Animations
-    const scrollElements = document.querySelectorAll('.product-card, .category, .testimonial-card');
     const scrollObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -131,7 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.2 });
 
-    scrollElements.forEach(element => scrollObserver.observe(element));
+    document.querySelectorAll('.product-card, .category, .testimonial-card').forEach(element => {
+        scrollObserver.observe(element);
+    });
 
     // Cart Functionality
     const cart = [];
@@ -241,6 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    document.querySelector('.close').addEventListener('click', closeModal);
+
     // Service Worker Registration
     if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
@@ -250,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log("Service Worker registered with scope:", registration.scope);
                 })
                 .catch((error) => {
-                    console.error("Service Worker registration failed:", error); // No change needed; logs registration errors.
+                    console.error("Service Worker registration failed:", error);
                 });
         });
     }
@@ -295,22 +281,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     fetchProducts();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Modal Functions
-    function openModal(productId) {
-        document.getElementById('productModal').style.display = 'block';
-        document.getElementById(productId).style.display = 'block';
-    }
-
-    function closeModal() {
-        document.getElementById('productModal').style.display = 'none';
-        const slides = document.getElementsByClassName('modal-slide');
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = 'none';
-        }
-    }
-
-    document.querySelector('.close').addEventListener('click', closeModal);
 });
